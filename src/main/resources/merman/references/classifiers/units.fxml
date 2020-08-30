@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?><?import javafx.scene.control.*?><?import javafx.scene.control.cell.PropertyValueFactory?><?import javafx.scene.image.*?><?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="merman.references.classifiers.UnitsController">
+    <SplitPane dividerPositions="0.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+        <AnchorPane>
+            <TableView fx:id="tvUnits" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columns>
+                    <TableColumn fx:id="tcName" prefWidth="100.0" text="Наименование">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcUnitCode" prefWidth="200.0" text="Код единицы по ОКЕИ">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="unitCode"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcFullName" prefWidth="200.0" text="Полное наименование">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="fullName"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </AnchorPane>
+        <BorderPane SplitPane.resizableWithParent="false">
+            <center>
+                <TabPane fx:id="tpRightTabPane" minWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <Tab text="Основные">
+                        <AnchorPane>
+                            <GridPane fx:id="gpBasic" disable="false" hgap="16.0" vgap="16.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <TextField fx:id="tfName" promptText="Наименование:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tfUnitCode" promptText="Код единицы по ОКЕИ:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tfFullName" promptText="Полное наименование:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <Label text="Наименование:" GridPane.rowIndex="1"/>
+                                <Label text="Полное наименование:" GridPane.rowIndex="3"/>
+                                <Label text="Код единицы по ОКЕИ:" GridPane.rowIndex="2"/>
+                                <Label text="Код:"/>
+                                <Label fx:id="lbId" GridPane.columnIndex="1"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </center>
+            <bottom>
+                <ButtonBar fx:id="bbSaveCancel" disable="false" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                    </padding>
+                    <buttons>
+                        <Button fx:id="btnCancel" onAction="#handleBtnCancelPress" text="Отмена"/>
+                        <Button fx:id="btnSave" layoutX="88.0" layoutY="10.0" onAction="#handleBtnSavePress" text="Сохранить"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+        </BorderPane>
+    </SplitPane>
+    <ToolBar maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" spacing="8.0" BorderPane.alignment="CENTER">
+            <Button fx:id="btnAddUnit" contentDisplay="GRAPHIC_ONLY" onAction="#handleBtnAddUnitPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/add-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Новая карточка"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnUpdateUnit" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleBtnUpdateUnitPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/edit-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Редактировать"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnRemoveUnit" contentDisplay="GRAPHIC_ONLY" layoutX="231.0" layoutY="10.0" onAction="#handleBtnRemoveUnitPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/delete-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Удалить"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnSearchUnit" contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" onAction="#handleBtnSearchUnitPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/search.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Поиск"/>
+                </tooltip>
+            </Button>
+
+
+        </HBox>
+    </ToolBar>
+</AnchorPane>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?><?import javafx.scene.control.*?><?import javafx.scene.control.cell.PropertyValueFactory?><?import javafx.scene.image.*?><?import javafx.scene.layout.*?><?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="merman.references.settlementswithemployees.EmployeesController">
+    <stylesheets>
+        <URL value="@../../styles.css"/>
+    </stylesheets>
+    <SplitPane dividerPositions="0.7" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+        <AnchorPane>
+            <TableView fx:id="tvEmployees" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columns>
+                    <TableColumn fx:id="tcSurname" prefWidth="200.0" text="Фамилия">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="surname"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcName" prefWidth="100.0" text="Имя">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcPatronymic" prefWidth="200.0" text="Отчество">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="patronymic"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcPosition" prefWidth="150.0" text="Должность">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="position"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </AnchorPane>
+        <BorderPane SplitPane.resizableWithParent="false">
+            <center>
+                <TabPane minWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <Tab text="Основные">
+                        <AnchorPane>
+                            <GridPane fx:id="gpBasic" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Код:"/>
+                                <Label fx:id="lbId" GridPane.columnIndex="1"/>
+                                <Label text="Фамилия:" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tfSurname" promptText="Фамилия:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Имя:" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tfName" promptText="Имя:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Label text="Отчество:" GridPane.rowIndex="3"/>
+                                <TextField fx:id="tfPatronymic" promptText="Отчество:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <Label text="Должность" GridPane.rowIndex="4"/>
+                                <ComboBox fx:id="cbPosition" maxWidth="1.7976931348623157E308" promptText="Должность" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                <Label text="Телефоны:" GridPane.rowIndex="5"/>
+                                <TextField fx:id="tfPhones" maxWidth="1.7976931348623157E308" promptText="Телефоны:" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                                <Label text="Документ удостоверяющий личность:" GridPane.rowIndex="6"/>
+                                <TextField fx:id="tfPassport" promptText="Документ удостоверяющий личность:" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                                <Label text="Дата рождения:" GridPane.rowIndex="7"/>
+                                <DatePicker fx:id="dpBirthDate" promptText="Дата рождения:" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                                <Label text="Дата приема на работу:" GridPane.rowIndex="8"/>
+                                <DatePicker fx:id="dpHireDate" promptText="Дата приема на работу:" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                                <CheckBox fx:id="chbDismissed" text="Уволен" GridPane.rowIndex="9"/>
+                                <Label text="Водительское удостоверение:" GridPane.rowIndex="10"/>
+                                <TextField fx:id="tfDriverLicense" promptText="Водительское удостоверение:" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+                                <Label text="Доверенное лицо:" GridPane.rowIndex="11"/>
+                                <TextField fx:id="tfTrustedPerson" promptText="Доверенное лицо:" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+                                <Label text="Дополнительная информация:" GridPane.rowIndex="12"/>
+                                <TextArea fx:id="taAdditionalInformation" promptText="Дополнительная информация:" GridPane.columnIndex="1" GridPane.rowIndex="12" GridPane.rowSpan="2"/>
+                                <CheckBox fx:id="chbNotShowInStatements" text="Не показывать при формировании ведомостей" GridPane.rowIndex="14"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </center>
+            <bottom>
+                <ButtonBar fx:id="bbSaveCancel" disable="true" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                    </padding>
+                    <buttons>
+                        <Button onAction="#handleBtnCancelPress" text="Отмена"/>
+                        <Button onAction="#handleBtnSavePress" text="Сохранить"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+        </BorderPane>
+    </SplitPane>
+    <ToolBar maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" spacing="8.0" BorderPane.alignment="CENTER">
+            <Button fx:id="btnAddEmployee" contentDisplay="GRAPHIC_ONLY" onAction="#handleBtnAddEmployeePress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/add-row.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnUpdateEmployee" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleBtnUpdateEmployeePress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/edit-row.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnRemoveEmployee" contentDisplay="GRAPHIC_ONLY" layoutX="231.0" layoutY="10.0" onAction="#handleBtnRemoveEmployeePress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/delete-row.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnSearchEmployee" contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" onAction="#handleBtnSearchEmployeePress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/search.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+
+        </HBox>
+    </ToolBar>
+</AnchorPane>

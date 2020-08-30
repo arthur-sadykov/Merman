@@ -1,0 +1,52 @@
+.toolbar-button {
+    -fx-background-color: transparent;
+}
+
+.toolbar-button:hover{
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+
+.tableview-header-hidden .column-header-background {
+	visibility: hidden;
+	-fx-padding: -1.0em;
+
+}
+
+
+.sumtable .scroll-bar:horizontal .track{
+    -fx-padding:0px;
+	-fx-background-color:transparent;
+	-fx-border-color:transparent;
+	-fx-background-radius: 0em;
+	-fx-border-radius:2em;
+
+}
+
+.sumtable .scroll-bar:horizontal .increment-button ,
+.sumtable .scroll-bar:horizontal .decrement-button {
+
+    -fx-background-color:transparent;
+	-fx-background-radius: 0em;
+	-fx-padding:0 0 0 0;
+}
+
+.sumtable  .scroll-bar:horizontal .increment-arrow,
+.sumtable  .scroll-bar:horizontal .decrement-arrow
+{
+	-fx-shape: " ";
+	-fx-padding:0;
+}
+
+.sumtable .scroll-bar:horizontal .thumb {
+    -fx-background-color:transparent;
+	-fx-background-insets: 0, 0, 0;
+	-fx-background-radius: 2em;
+    -fx-padding:0px;
+
+}

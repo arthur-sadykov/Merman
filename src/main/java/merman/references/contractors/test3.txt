@@ -1,0 +1,4 @@
+optionsMap.put("Наименование", new SimpleBooleanProperty(false));
+optionsMap.put("БИК", new SimpleBooleanProperty(false));
+optionsMap.put("Корреспондентский счет", new SimpleBooleanProperty(false));
+optionsMap.put("Местонахождение", new SimpleBooleanProperty(false));

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?><?import javafx.scene.control.*?><?import javafx.scene.control.cell.PropertyValueFactory?><?import javafx.scene.image.*?><?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="merman.administration.SettingsAndRightsController">
+    <SplitPane dividerPositions="0.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+        <AnchorPane>
+            <TableView fx:id="tvRights" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columns>
+                    <TableColumn fx:id="tcName" prefWidth="300.0" text="Наименование">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </AnchorPane>
+        <BorderPane SplitPane.resizableWithParent="false">
+            <center>
+                <TabPane fx:id="tpRightTabPane" minWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <Tab text="Основные">
+                        <AnchorPane>
+                            <GridPane fx:id="gpBasic" disable="true" hgap="16.0" vgap="16.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" GridPane.rowIndex="1">
+                                    <Label text="Наименование:"/>
+                                    <TextField fx:id="tfName" promptText="Наименование:" HBox.hgrow="ALWAYS"/>
+                                </HBox>
+                                <CheckBox fx:id="chbAdministrative" text="Административные права" GridPane.rowIndex="2"/>
+                                <CheckBox fx:id="chbEditOtherPeopleDocuments" text="Право редактировать чужие документы" GridPane.rowIndex="3"/>
+                                <CheckBox fx:id="chbEditOtherPeopleDirectoryEntries" text="Право редактировать чужие записи справочников" GridPane.rowIndex="4"/>
+                                <CheckBox fx:id="chbPrintUnsentDocuments" text="Печать непроведенных документов" GridPane.rowIndex="5"/>
+                                <CheckBox fx:id="chbPrintRegistryAndExportDirectory" text="Печать реестра и экспорт справочника" GridPane.rowIndex="6"/>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" GridPane.rowIndex="9">
+                                    <Label text="Число дней редактирования:"/>
+                                    <TextField fx:id="tfNumberOfEditingDays" promptText="Число дней редактирования (0 - без ограничений):" HBox.hgrow="ALWAYS"/>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" GridPane.rowIndex="10">
+                                    <Label text="Ввод документов будущим числом:" GridPane.rowIndex="10"/>
+                                    <TextField fx:id="tfNumberOfDaysForAddingDocumentsInTheFuture" promptText="Ввод документов будущим числом не более чем на (0 - без ограничений):" GridPane.columnIndex="1" GridPane.rowIndex="10" HBox.hgrow="ALWAYS"/>
+                                </HBox>
+                                <CheckBox fx:id="chbGroupProcessingOfDirectoriesDocuments" text="Групповая обработка справочников, документов" GridPane.rowIndex="7"/>
+                                <CheckBox fx:id="chbDisallowWriteFailedDocument" text="Запрет записи непроведенного документа" GridPane.rowIndex="8"/>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0">
+                                    <Label text="Код:"/>
+                                    <Label fx:id="lbId" GridPane.columnIndex="1"/>
+                                </HBox>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </center>
+            <bottom>
+                <ButtonBar fx:id="bbSaveCancel" disable="true" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                    </padding>
+                    <buttons>
+                        <Button fx:id="btnCancel" onAction="#handleBtnCancelPress" text="Отмена"/>
+                        <Button fx:id="btnSave" layoutX="88.0" layoutY="10.0" onAction="#handleBtnSavePress" text="Сохранить"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+        </BorderPane>
+    </SplitPane>
+    <ToolBar maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" spacing="8.0" BorderPane.alignment="CENTER">
+            <Button fx:id="btnAddRight" contentDisplay="GRAPHIC_ONLY" onAction="#handleBtnAddRightPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../icons/add-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Новая карточка"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnUpdateRight" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleBtnUpdateRightPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../icons/edit-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Редактировать"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnRemoveRight" contentDisplay="GRAPHIC_ONLY" layoutX="231.0" layoutY="10.0" onAction="#handleBtnRemoveRightPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../icons/delete-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Удалить"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnSearchRight" contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" onAction="#handleBtnSearchRightPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../icons/search.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Поиск"/>
+                </tooltip>
+            </Button>
+
+
+        </HBox>
+    </ToolBar>
+</AnchorPane>

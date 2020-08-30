@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?><?import javafx.scene.control.*?><?import javafx.scene.control.cell.PropertyValueFactory?><?import javafx.scene.image.*?><?import javafx.scene.layout.*?><?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="merman.references.contractors.ContractorsController">
+    <stylesheets>
+        <URL value="@../../styles.css"/>
+    </stylesheets>
+    <SplitPane dividerPositions="0.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+        <AnchorPane>
+            <TableView fx:id="tvContractors" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columns>
+                    <TableColumn fx:id="tcName" prefWidth="150.0" text="Наименование">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcPhones" prefWidth="175.0" text="Телефоны">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="phone"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcCode" prefWidth="200.0" text="Карта/код клиента">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="cardNumber"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+
+        </AnchorPane>
+        <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <center>
+                <TabPane minWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <Tab text="Основные">
+                        <AnchorPane>
+                            <GridPane fx:id="gpBasic" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="75.0" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Код:"/>
+                                <Label fx:id="lbId" GridPane.columnIndex="1"/>
+                                <Label text="Наименование:" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tfName" promptText="Наименование:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Вид контрагента:" GridPane.rowIndex="2"/>
+                                <ComboBox fx:id="cbContractorType" maxWidth="1.7976931348623157E308" promptText="Вид контрагента:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Label text="Диспетчер (персональный менеджер):" GridPane.rowIndex="3"/>
+                                <ComboBox fx:id="cbDispatcher" maxWidth="1.7976931348623157E308" promptText="Диспетчер (персональный менеджер):" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <Label text="Телефоны:" GridPane.rowIndex="4"/>
+                                <TextField fx:id="tfPhone" promptText="Телефоны:" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                <Label text="Электронная почта:" GridPane.rowIndex="5"/>
+                                <TextField fx:id="tfEmail" promptText="Электронная почта:" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                                <Label text="Тип цен:" GridPane.rowIndex="6"/>
+                                <ComboBox fx:id="cbPriceType" maxWidth="1.7976931348623157E308" promptText="Тип цен:" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                                <Label text="Скидка:" GridPane.rowIndex="7"/>
+                                <ComboBox fx:id="cbDiscountType" maxWidth="1.7976931348623157E308" promptText="Скидка:" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                                <Label text="Форма расчетов:" GridPane.rowIndex="8"/>
+                                <ComboBox fx:id="cbFormOfPayment" maxWidth="1.7976931348623157E308" promptText="Форма расчетов:" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                                <Label text="Фирма-поставщик:" GridPane.rowIndex="9"/>
+                                <ComboBox fx:id="cbFirm" maxWidth="1.7976931348623157E308" promptText="Фирма-поставщик:" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+                                <Label text="Торговый представитель (дилер):" GridPane.rowIndex="10"/>
+                                <ComboBox fx:id="cbDealer" maxWidth="1.7976931348623157E308" promptText="Торговый представитель (дилер):" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+                                <Label text="Дополнительные сведения:" GridPane.rowIndex="11"/>
+                                <TextArea fx:id="tfAdditionalInformation" promptText="Дополнительные сведения:" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Реквизиты">
+                        <AnchorPane>
+                            <GridPane fx:id="gpRequisites" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Полное наименование:"/>
+                                <TextField fx:id="tfFullName" promptText="Полное наименование:" GridPane.columnIndex="1"/>
+                                <Label text="Юридический адрес:" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tfLegalAddress" promptText="Юридический адрес:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Почтовый адрес:" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tfPhysicalAddress" promptText="Почтовый адрес:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Label text="ИНН:" GridPane.rowIndex="3"/>
+                                <TextField fx:id="tfInn" promptText="ИНН:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <Label text="ОГРН:" GridPane.rowIndex="4"/>
+                                <TextField fx:id="tfOgrn" promptText="ОГРН:" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                <Label text="ОКПО:" GridPane.rowIndex="5"/>
+                                <TextField fx:id="tfOkpo" promptText="ОКПО:" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                                <Label text="ОКВЭД:" GridPane.rowIndex="6"/>
+                                <TextField fx:id="tfOkved" promptText="ОКВЭД:" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                                <Label text="Руководитель:" GridPane.rowIndex="7"/>
+                                <TextField fx:id="tfDirector" promptText="Руководитель:" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                                <Label text="в лице (для договоров):" GridPane.rowIndex="8"/>
+                                <TextField fx:id="tfInFaceOf" promptText="в лице (для договоров):" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                                <Label text="действующего на основании (для договоров):" GridPane.rowIndex="9"/>
+                                <TextField fx:id="tfActingOnTheBasisOf" promptText="действующего на основании (для договоров):" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+                                <Label text="Карта/код клиента:" GridPane.rowIndex="10"/>
+                                <TextField fx:id="tfCardNumber" promptText="Карта/код клиента:" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+                                <Label text="Паспортные данные:" GridPane.rowIndex="11"/>
+                                <TextField fx:id="tfPassport" promptText="Паспортные данные:" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+                                <Label text="Идентификатор в СЭД:" GridPane.rowIndex="12"/>
+                                <TextField fx:id="tfIdentifierSED" promptText="Идентификатор в СЭД:" GridPane.columnIndex="1" GridPane.rowIndex="12"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </center>
+            <bottom>
+                <ButtonBar fx:id="bbSaveCancel" disable="true" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                    </padding>
+                    <buttons>
+                        <Button fx:id="btnCancel" onAction="#handleBtnCancelPress" text="Отмена"/>
+                        <Button fx:id="btnSave" layoutX="88.0" layoutY="10.0" onAction="#handleBtnSavePress" text="Сохранить"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+        </BorderPane>
+    </SplitPane>
+    <ToolBar maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" spacing="8.0" BorderPane.alignment="CENTER">
+            <Button fx:id="btnAddContractor" contentDisplay="GRAPHIC_ONLY" onAction="#handleBtnAddContractorPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/add-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Новая карточка"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnUpdateContractor" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleBtnUpdateContractorPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/edit-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Редактировать"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnRemoveContractor" contentDisplay="GRAPHIC_ONLY" layoutX="231.0" layoutY="10.0" onAction="#handleBtnRemoveContractorPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/delete-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Удалить"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnSearchContractor" contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" onAction="#handleBtnSearchContractorPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/search.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Поиск"/>
+                </tooltip>
+            </Button>
+
+
+        </HBox>
+    </ToolBar>
+</AnchorPane>

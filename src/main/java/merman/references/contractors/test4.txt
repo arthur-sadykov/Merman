@@ -1,0 +1,4 @@
+textColumnNameMap.put("Наименование", NAME);
+textColumnNameMap.put("БИК", BIK);
+textColumnNameMap.put("Корреспондентский счет", CORRESPONDENT_ACCOUNT);
+textColumnNameMap.put("Местонахождение", CITY);

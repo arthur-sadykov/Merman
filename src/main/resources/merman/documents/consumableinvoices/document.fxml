@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?><?import javafx.scene.control.*?><?import javafx.scene.image.*?><?import javafx.scene.layout.*?><?import java.lang.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="900.0" stylesheets="@../../styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="merman.documents.consumableinvoices.DocumentController">
+    <ScrollPane fx:id="spScroller" layoutY="56.0" pannable="true" prefHeight="344.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+        <StackPane fx:id="spImageHolder">
+            <ImageView fx:id="ivDocument" pickOnBounds="true" preserveRatio="true"/>
+        </StackPane>
+    </ScrollPane>
+    <ToolBar maxHeight="-Infinity" prefHeight="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#handleBtnPrintPress" styleClass="toolbar-button" text="Печать">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/printer.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="btnSaveInPdf" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleBtnSaveInPdfPress" styleClass="toolbar-button">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/pdf.png"/>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Сохранить в PDF"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="btnSaveInDocx" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleBtnSaveInDocxPress" styleClass="toolbar-button">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/docx.png"/>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Сохранить в DOCX"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="btnSaveInRtf" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleBtnSaveInRtfPress" styleClass="toolbar-button">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/rtf.png"/>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Сохранить в RTF"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="btnGoToPreviousPage" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleBtnGoToPreviousPagePress" styleClass="toolbar-button">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/go-previous.png"/>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Предыдущая страница"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="btnGoToNextPage" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleBtnGoToNextPagePress" styleClass="toolbar-button">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/go-next.png"/>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Следующая страница"/>
+            </tooltip>
+        </Button>
+        <Button fx:id="btnZoomOut" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleBtnZoomOutPress" styleClass="toolbar-button">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/out-zoom.png"/>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Уменьшить"/>
+            </tooltip>
+        </Button>
+        <ComboBox fx:id="cbChangeSize" prefWidth="150.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="25%"/>
+                    <String fx:value="50%"/>
+                    <String fx:value="75%"/>
+                    <String fx:value="100%"/>
+                    <String fx:value="150%"/>
+                    <String fx:value="200%"/>
+                    <String fx:value="300%"/>
+                    <String fx:value="400%"/>
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="100%"/>
+            </value>
+        </ComboBox>
+        <Button fx:id="btnZoomIn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleBtnZoomInPress" styleClass="toolbar-button">
+            <graphic>
+                <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../../icons/in-zoom.png"/>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Увеличить"/>
+            </tooltip>
+        </Button>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <StackPane>
+            <ProgressBar fx:id="pbProgress" prefWidth="200.0" visible="false"/>
+            <Label fx:id="lbStatus" text="Подготовка документа..." visible="false"/>
+        </StackPane>
+    </ToolBar>
+</AnchorPane>

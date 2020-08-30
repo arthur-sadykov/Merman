@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?><?import javafx.scene.control.*?><?import javafx.scene.control.cell.PropertyValueFactory?><?import javafx.scene.image.*?><?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="merman.administration.UsersController">
+    <SplitPane dividerPositions="0.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+        <AnchorPane>
+            <TableView fx:id="tvUsers" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+                <columns>
+                    <TableColumn fx:id="tcName" prefWidth="200.0" text="Имя пользователя">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcSurnameNamePatronymic" prefWidth="200.0" text="Ф.И.О">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="surnameNamePatronymic"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcRights" prefWidth="150.0" text="Набор прав">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="rights"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcSmtpAddress" prefWidth="200.0" text="Адрес эл. почты">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="smtpAddress"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </AnchorPane>
+        <BorderPane SplitPane.resizableWithParent="false">
+            <center>
+                <TabPane fx:id="tpUserTabPane" minWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <Tab fx:id="tbBasic" text="Основные">
+                        <AnchorPane>
+                            <GridPane fx:id="gpBasic" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Код:"/>
+                                <Label fx:id="lbId" GridPane.columnIndex="1"/>
+                                <Label text="Имя пользователя:" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tfName" promptText="Имя пользователя:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Ф.И.О:" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tfSurnameNamePatronymic" promptText="Ф.И.О:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Label text="Набор прав:" GridPane.rowIndex="3"/>
+                                <ComboBox fx:id="cbRights" maxWidth="1.7976931348623157E308" promptText="Набор прав:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab fx:id="tbEmail" text="Электронная почта">
+                        <AnchorPane>
+                            <GridPane fx:id="gpEmail" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="250.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Адрес электронной почты:"/>
+                                <TextField fx:id="tfSmtpAddress" promptText="Адрес электронной почты:" GridPane.columnIndex="1"/>
+                                <Label text="Имя пользователя электронной почты:" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tfSmtpUser" promptText="Имя пользователя электронной почты:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Пароль электронной почты:" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tfSmtpPassword" promptText="Пароль электронной почты:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Label text="SMTP сервер:" GridPane.rowIndex="3"/>
+                                <TextField fx:id="tfSmtpHost" promptText="SMTP сервер:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <Label text="SMTP порт:" GridPane.rowIndex="4"/>
+                                <TextField fx:id="tfSmtpPort" promptText="SMTP порт:" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                <CheckBox fx:id="chbSmtpAuthenticationRequired" text="Требуется аутентификация" GridPane.rowIndex="5"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </center>
+            <bottom>
+                <ButtonBar fx:id="bbSaveCancel" disable="true" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                    </padding>
+                    <buttons>
+                        <Button fx:id="btnCancel" onAction="#handleBtnCancelPress" text="Отмена"/>
+                        <Button fx:id="btnSave" layoutX="88.0" layoutY="10.0" onAction="#handleBtnSavePress" text="Сохранить"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+        </BorderPane>
+    </SplitPane>
+    <ToolBar maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" spacing="8.0" BorderPane.alignment="CENTER">
+            <Button fx:id="btnAddUser" contentDisplay="GRAPHIC_ONLY" onAction="#handleBtnAddUserPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../icons/add-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Новая карточка"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnUpdateUser" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleBtnUpdateUserPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../icons/edit-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Редактировать"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnRemoveUser" contentDisplay="GRAPHIC_ONLY" layoutX="231.0" layoutY="10.0" onAction="#handleBtnRemoveUserPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../icons/delete-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Удалить"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnSearchUser" contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" onAction="#handleBtnSearchUserPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../icons/search.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Поиск"/>
+                </tooltip>
+            </Button>
+
+
+        </HBox>
+        <Button fx:id="btnSetPassword" mnemonicParsing="false" onAction="#handleBtnSetPasswordPress" text="Установить пароль">
+            <tooltip>
+                <Tooltip text="Установить пароль"/>
+            </tooltip>
+        </Button>
+    </ToolBar>
+</AnchorPane>

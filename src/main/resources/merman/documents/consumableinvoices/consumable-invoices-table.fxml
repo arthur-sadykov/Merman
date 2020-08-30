@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?><?import javafx.scene.control.cell.*?><?import javafx.scene.image.*?><?import javafx.scene.layout.*?><?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="merman.documents.consumableinvoices.ConsumableInvoicesTableController">
+    <stylesheets>
+        <URL value="@../../styles.css"/>
+    </stylesheets>
+    <SplitPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+        <AnchorPane>
+            <TableView fx:id="tvConsumableInvoices" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columns>
+                    <TableColumn fx:id="tcNumber" prefWidth="100.0" text="Номер">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="number"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcDocumentDate" prefWidth="100.0" text="Дата">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="documentDate"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcComment" prefWidth="100.0" text="Комментарий">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="comment"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcFirm" prefWidth="100.0" text="Фирма">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="firm"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcContractor" prefWidth="100.0" text="Контрагент">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="contractor"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcAddress" prefWidth="100.0" text="Адрес">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="address"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcDispatcher" prefWidth="100.0" text="Диспетчер">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="dispatcher"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </AnchorPane>
+    </SplitPane>
+    <ToolBar maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" spacing="8.0" BorderPane.alignment="CENTER">
+            <Button fx:id="btnAddConsumableInvoice" contentDisplay="GRAPHIC_ONLY" onAction="#handleBtnAddConsumableInvoicePress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/add-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Новая карточка"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnEditConsumableInvoice" contentDisplay="GRAPHIC_ONLY" onAction="#handleBtnEditConsumableInvoicePress">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/edit-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Новая карточка"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnRemoveConsumableInvoice" contentDisplay="GRAPHIC_ONLY" layoutX="231.0" layoutY="10.0" onAction="#handleBtnRemoveConsumableInvoicePress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/delete-row.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Удалить"/>
+                </tooltip>
+            </Button>
+            <Button fx:id="btnSearchConsumableInvoice" contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" onAction="#handleBtnSearchConsumableInvoicePress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/search.png"/>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Поиск"/>
+                </tooltip>
+            </Button>
+
+
+        </HBox>
+    </ToolBar>
+</AnchorPane>

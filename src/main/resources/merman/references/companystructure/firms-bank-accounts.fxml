@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?><?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="300" prefWidth="500" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="merman.references.companystructure.FirmsBankAccountsController">
+    <stylesheets>
+        <URL value="@../../styles.css"/>
+    </stylesheets>
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <AnchorPane>
+                <GridPane fx:id="gpBasic" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                    </rowConstraints>
+                    <padding>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                    </padding>
+                    <Label text="Номер счета:"/>
+                    <Label text="Банк:" GridPane.rowIndex="1"/>
+                    <CheckBox fx:id="chbMain" mnemonicParsing="false" text="Основной" GridPane.rowIndex="2"/>
+                    <TextField fx:id="tfNumber" promptText="Номер счета:" GridPane.columnIndex="1"/>
+                    <ComboBox fx:id="cbBank" maxWidth="1.7976931348623157E308" promptText="Банк:" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1"/>
+                </GridPane>
+            </AnchorPane>
+        </center>
+        <bottom>
+            <ButtonBar fx:id="bbSaveCancel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                <padding>
+                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                </padding>
+                <buttons>
+                    <Button fx:id="btnSave" layoutX="88.0" layoutY="10.0" onAction="#handleBtnSavePress" text="Сохранить"/>
+                    <Button fx:id="btnCancel" onAction="#handleBtnCancelPress" text="Отмена"/>
+                </buttons>
+            </ButtonBar>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

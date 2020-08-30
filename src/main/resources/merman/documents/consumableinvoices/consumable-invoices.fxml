@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="merman.documents.consumableinvoices.ConsumableInvoicesController">
+    <stylesheets>
+        <URL value="@../../styles.css" />
+    </stylesheets>
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" SplitPane.resizableWithParent="false">
+        <top>
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <padding>
+                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                </padding>
+                <Label text="Заказ №:" />
+                <TextField fx:id="tfNumber" promptText="Заказ №:" />
+                <Label text="От:" />
+                <DatePicker fx:id="dpDocumentDate" promptText="От:" />
+                <HBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                <MenuButton mnemonicParsing="false" text="Документ">
+                    <items>
+                        <MenuItem fx:id="miInvoice" mnemonicParsing="false" onAction="#handleMiInvoicePress" text="Счёт-фактура" />
+                        <MenuItem fx:id="miPaymentInvoice" mnemonicParsing="false" onAction="#handleMiPaymentInvoicePress" text="Счёт" />
+                    </items>
+                </MenuButton>
+            </HBox>
+        </top>
+        <center>
+            <VBox spacing="8.0" BorderPane.alignment="CENTER">
+                <TabPane fx:id="tpTopTabPane" minHeight="300.0" tabClosingPolicy="UNAVAILABLE">
+                    <Tab text="Шапка">
+                        <AnchorPane>
+                            <GridPane fx:id="gpHeader" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0" />
+                                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints />
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                                </padding>
+                                <Label text="Фирма:" />
+                                <ComboBox fx:id="cbFirm" maxWidth="1.7976931348623157E308" promptText="Фирма:" GridPane.columnIndex="1" />
+                                <Label text="Склад:" GridPane.rowIndex="1" />
+                                <ComboBox fx:id="cbWarehouse" maxWidth="1.7976931348623157E308" promptText="Склад:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label text="Контрагент:" GridPane.rowIndex="2" />
+                                <ComboBox fx:id="cbContractor" maxWidth="1.7976931348623157E308" promptText="Контрагент:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label text="Договор:" GridPane.rowIndex="3" />
+                                <ComboBox fx:id="cbContract" maxWidth="1.7976931348623157E308" promptText="Договор:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label text="Адрес:" GridPane.rowIndex="4" />
+                                <TextField fx:id="tfAddress" maxWidth="1.7976931348623157E308" promptText="Адрес:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Label text="Комментарий:" GridPane.columnIndex="2" />
+                                <TextField fx:id="tfComment" promptText="Комментарий:" GridPane.columnIndex="3" />
+                                <Label text="Время доставки с:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                <TextField fx:id="tfDeliveryTimeFrom" promptText="Время доставки с:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                <Label text="Время доставки до:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                <TextField fx:id="tfDeliveryTimeTo" promptText="Время доставки до:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Печать">
+                        <AnchorPane>
+                            <GridPane fx:id="gpPrint" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints />
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                                </padding>
+                                <Label text="Доверенность №:" />
+                                <TextField fx:id="tfPowerOfAttorneyNumber" promptText="Доверенность номер:" GridPane.columnIndex="1" />
+                                <Label text="От:" GridPane.rowIndex="1" />
+                                <DatePicker fx:id="dpPowerOfAttorneyDate" promptText="От:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label text="Кем и кому выдана:" GridPane.rowIndex="2" />
+                                <TextField fx:id="tfWhoAndToWhomThePowerOfAttorneyWasIssued" promptText="Кем и кому выдана:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label text="Груз принял (должность):" GridPane.rowIndex="3" />
+                                <TextField fx:id="tfCarrierPosition" promptText="Груз принял (должность):" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label text="Грузополучатель (должность):" GridPane.rowIndex="4" />
+                                <TextField fx:id="tfConsigneePosition" promptText="Грузополучатель (должность):" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Подписи">
+                        <AnchorPane>
+                            <GridPane fx:id="gpSignatures" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" />
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER" />
+                                    <RowConstraints />
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                                </padding>
+                                <Label text="Диспетчер:" />
+                                <ComboBox fx:id="cbDispatcher" maxWidth="1.7976931348623157E308" promptText="Диспетчер:" GridPane.columnIndex="1" />
+                                <Label text="Руководитель:" GridPane.rowIndex="1" />
+                                <ComboBox fx:id="cbDirector" maxWidth="1.7976931348623157E308" promptText="Руководитель:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label text="Главный бухгалтер:" GridPane.rowIndex="2" />
+                                <ComboBox fx:id="cbChiefAccountant" maxWidth="1.7976931348623157E308" promptText="Главный бухгалтер:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab fx:id="tbAdditionalInformation" text="Дополнительные сведения">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <GridPane hgap="8.0" layoutX="89.0" layoutY="56.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" />
+                                    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="200.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER" />
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                </padding>
+                                <Label text="Расчетный счет:" />
+                                <Label layoutX="10.0" layoutY="43.0" text="Скидка:" GridPane.rowIndex="1" />
+                                <Label text="Тип цен:" GridPane.rowIndex="2" />
+                                <ComboBox fx:id="cbCheckingAccount" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Расчетный счет:" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" />
+                                <ComboBox fx:id="cbDiscount" maxWidth="1.7976931348623157E308" promptText="Скидка:" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                                <ComboBox fx:id="cbPriceType" maxWidth="1.7976931348623157E308" promptText="Тип цен:" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+                <TabPane fx:id="tpBottomTabPane" tabClosingPolicy="UNAVAILABLE">
+                    <Tab text="Товары">
+                        <AnchorPane>
+                            <ToolBar maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" BorderPane.alignment="CENTER">
+                                    <Button fx:id="btnAddProduct" contentDisplay="GRAPHIC_ONLY" onAction="#handleBtnAddProductPress" styleClass="toolbar-button">
+                                        <graphic>
+                                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <Image url="@../../icons/add-row.png" />
+                                            </ImageView>
+                                        </graphic>
+                                        <tooltip>
+                                            <Tooltip text="Новая строка" />
+                                        </tooltip>
+                                    </Button>
+                                    <Button fx:id="btnRemoveProduct" contentDisplay="GRAPHIC_ONLY" layoutX="231.0" layoutY="10.0" onAction="#handleBtnRemoveProductPress" styleClass="toolbar-button">
+                                        <graphic>
+                                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <Image url="@../../icons/delete-row.png" />
+                                            </ImageView>
+                                        </graphic>
+                                        <tooltip>
+                                            <Tooltip text="Удалить" />
+                                        </tooltip>
+                                    </Button>
+                                    <Button fx:id="btnSearchProduct" contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" onAction="#handleBtnSearchProductPress" styleClass="toolbar-button">
+                                        <graphic>
+                                            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                <Image url="@../../icons/search.png" />
+                                            </ImageView>
+                                        </graphic>
+                                        <tooltip>
+                                            <Tooltip text="Поиск" />
+                                        </tooltip>
+                                    </Button>
+
+                                </HBox>
+                            </ToolBar>
+                            <TableView fx:id="tvConsumableInvoicesProducts" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+                                <columns>
+                                    <TableColumn fx:id="tcProduct" prefWidth="100.0" text="Товар">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="product" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="tcQuantity" prefWidth="100.0" text="Количество">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="quantity" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="tcPrice" prefWidth="100.0" text="Цена">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="price" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="tcAmount" prefWidth="100.0" text="Сумма">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="amount" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="tcVatRate" prefWidth="100.0" text="Ставка НДС">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="vatRate" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="tcVatAmount" prefWidth="100.0" text="В т.ч. НДС">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="vatAmount" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="tcFlipContainer" prefWidth="100.0" text="Тара">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="flipContainer" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="tcProductRemainder" prefWidth="100.0" text="Остатки товара">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="productRemainder" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+                            </TableView>
+                            <TableView fx:id="tvSumTable" maxHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                <columns>
+                                    <TableColumn fx:id="tcProductTotal" prefWidth="299.0">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="total" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="tcTotal" minWidth="0.0" prefWidth="119.0">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="amount" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="tcVatRateTotal" prefWidth="75.0" />
+                                    <TableColumn fx:id="tcVatTotal" prefWidth="75.0">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="vatAmount" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+
+                                </columns>
+                                <styleClass>
+                                    <String fx:value="sumtable" />
+                                    <String fx:value="tableview-header-hidden" />
+                                </styleClass>
+                            </TableView>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </VBox>
+        </center>
+        <bottom>
+            <HBox>
+                <padding>
+                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                </padding>
+                <ButtonBar fx:id="bbSaveCancel" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="300.0">
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                    </padding>
+                    <buttons>
+                        <Button fx:id="btnCancel" onAction="#handleBtnCancelPress" text="Отмена" />
+                        <Button fx:id="btnSave" layoutX="88.0" layoutY="10.0" onAction="#handleBtnSavePress" text="Сохранить" />
+                    </buttons>
+                </ButtonBar>
+                <HBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                <StackPane>
+                    <ProgressBar fx:id="pbProgress" prefWidth="200.0" visible="false" />
+                    <Label fx:id="lbDocumentPreparing" text="Подготовка документа..." visible="false" />
+                </StackPane>
+            </HBox>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

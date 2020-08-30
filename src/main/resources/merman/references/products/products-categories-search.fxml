@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?><?import javafx.scene.control.cell.PropertyValueFactory?><?import javafx.scene.layout.*?><?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" fx:controller="merman.references.products.ProductsCategoriesSearchController">
+    <stylesheets>
+        <URL value="@../../styles.css"/>
+    </stylesheets>
+    <SplitPane dividerPositions="0.3" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+        <AnchorPane>
+            <ListView fx:id="lvOptions" minWidth="200" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="96.0"/>
+            <Label text="Поиск" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0"/>
+            <TextField fx:id="tfSearch" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="48.0"/>
+            <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#handleBtnSearchPress" text="Выполнить" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" styleClass="toolbar-button"/>
+        </AnchorPane>
+        <AnchorPane>
+            <TableView fx:id="tvProductCategories" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" BorderPane.alignment="CENTER">
+                <columns>
+                    <TableColumn fx:id="tcName" prefWidth="300.0" text="Наименование">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </AnchorPane>
+    </SplitPane>
+</AnchorPane>

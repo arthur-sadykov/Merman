@@ -1,0 +1,30 @@
+module merman {
+    requires javafx.fxml;
+    requires java.sql.rowset;
+    requires javafx.controls;
+    requires java.logging;
+    requires java.sql;
+    requires javafx.graphics;
+    requires javafx.base;
+    requires pdfbox;
+    requires pdfbox.tools;
+    requires poi.jodconverter.itext;
+    requires com.sun.jna.platform;
+    requires java.desktop;
+    exports merman;
+    exports merman.login to javafx.graphics;
+    opens merman.administration to javafx.fxml;
+    opens merman.alert to javafx.fxml;
+    opens merman.core to javafx.fxml;
+    opens merman.references.classifiers to javafx.fxml;
+    opens merman.references.contractors to javafx.fxml;
+    opens merman.references.currenciescashesbanks to javafx.fxml;
+    opens merman.references.flipcontainers to javafx.fxml;
+    opens merman.references.pricesdiscounts to javafx.fxml;
+    opens merman.references.products to javafx.fxml;
+    opens merman.references.services to javafx.fxml;
+    opens merman.references.settlementswithemployees to javafx.fxml;
+    opens merman.login to javafx.fxml;
+    opens merman.references.companystructure to javafx.fxml;
+    opens merman.documents.consumableinvoices to javafx.fxml;
+}

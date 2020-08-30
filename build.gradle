@@ -1,0 +1,40 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+    id "org.beryx.jlink" version "2.10.4"
+}
+
+javafx {
+    modules = ['javafx.controls', 'javafx.fxml', "javafx.web"]
+}
+String mavenGroupId = 'merman'
+String mavenVersion = '1.0-SNAPSHOT'
+sourceCompatibility = '1.12'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+applicationDefaultJvmArgs = ["-Dfile.encoding=UTF-8"]
+def main_class = 'merman.Main'
+mainClassName = "$moduleName/$main_class"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.0-M1'
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.0-M1'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
+    implementation group: 'net.java.dev.jna', name: 'jna-platform', version: '5.3.1'
+    implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.15'
+    implementation group: 'org.apache.pdfbox', name: 'pdfbox-tools', version: '2.0.15'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+}
+
+
+test {
+    useJUnitPlatform()
+}
+
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+}

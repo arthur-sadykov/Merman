@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?><?import javafx.scene.layout.*?>
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="merman.core.CoreController">
+    <children>
+
+        <BorderPane fx:id="bpContent" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="Справочники">
+                            <items>
+                                <MenuItem fx:id="miProducts" mnemonicParsing="false" onAction="#handleMiProductsPress" text="Товары"/>
+                                <Menu fx:id="mnEmployeesSettlements" mnemonicParsing="false" text="Расчеты с сотрудниками">
+                                    <items>
+                                        <MenuItem fx:id="miEmployees" mnemonicParsing="false" onAction="#handleMiEmployeesPress" text="Сотрудники"/>
+                                        <MenuItem fx:id="miPositions" mnemonicParsing="false" onAction="#handleMiPositionsPress" text="Должности"/>
+                                        <MenuItem fx:id="miTypesOfSettlementsWithEmployees" mnemonicParsing="false" onAction="#handleMiTypesOfSettlementsWithEmployeesPress" text="Виды расчетов с сотрудниками"/>
+                                        <MenuItem fx:id="miTypesOfCharges" mnemonicParsing="false" onAction="#handleMiTypesOfChargesPress" text="Виды начислений"/>
+                                        <MenuItem fx:id="miTypesOfDeductions" mnemonicParsing="false" onAction="#handleMiTypesOfDeductionsPress" text="Виды удержаний"/>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Маркетинг">
+                                    <items>
+                                        <MenuItem fx:id="miProductCategories" mnemonicParsing="false" onAction="#handleMiProductCategoriesPress" text="Категории товаров"/>
+                                        <MenuItem fx:id="miContractorTypes" mnemonicParsing="false" onAction="#handleMiContractorTypesPress" text="Виды контрагентов"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnClassifiers" mnemonicParsing="false" text="Классификаторы">
+                                    <items>
+                                        <MenuItem fx:id="miUnits" mnemonicParsing="false" onAction="#handleMiUnitsPress" text="Единицы измерения"/>
+                                    </items>
+                                </Menu>
+                                <MenuItem fx:id="miFlipContainer" mnemonicParsing="false" onAction="#handleMiFlipContainerPress" text="Оборотная тара"/>
+                                <Menu fx:id="mnCurrenciesCashesBanks" mnemonicParsing="false" text="Валюты, кассы, банки">
+                                    <items>
+                                        <MenuItem fx:id="miCurrencies" mnemonicParsing="false" onAction="#handleMiCurrenciesPress" text="Валюты"/>
+                                        <MenuItem fx:id="miCashFlows" mnemonicParsing="false" onAction="#handleMiCashFlowsPress" text="Движения денежных средств"/>
+                                        <MenuItem fx:id="miTaxationSystems" mnemonicParsing="false" onAction="#handleMiTaxationSystemsPress" text="Движения денежных средств"/>
+                                        <MenuItem fx:id="miBanks" mnemonicParsing="false" onAction="#handleMiBanksPress" text="Банки"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnCompanyStructure" mnemonicParsing="false" text="Структура компании">
+                                    <items>
+                                        <MenuItem fx:id="miDivisions" mnemonicParsing="false" onAction="#handleMiDivisionsPress" text="Подразделения (цеха, отделы)"/>
+                                        <MenuItem fx:id="miTills" mnemonicParsing="false" onAction="#handleMiTillsPress" text="Кассы"/>
+                                        <MenuItem fx:id="miFirms" mnemonicParsing="false" onAction="#handleMiFirmsPress" text="Фирмы"/>
+                                        <MenuItem fx:id="miWarehouses" mnemonicParsing="false" onAction="#handleMiWarehousesPress" text="Склады"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnPricesDiscounts" mnemonicParsing="false" text="Цены, скидки">
+                                    <items>
+                                        <MenuItem fx:id="miTypesOfPrices" mnemonicParsing="false" onAction="#handleMiTypesOfPricesPress" text="Типы цен"/>
+                                        <MenuItem fx:id="miDiscounts" mnemonicParsing="false" onAction="#handleMiDiscountsPress" text="Скидки"/>
+                                        <MenuItem fx:id="miVATRates" mnemonicParsing="false" onAction="#handleMiVATRatesPress" text="Ставки НДС"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnCustomerSearch" mnemonicParsing="false" text="Поиск клиентов">
+                                    <items>
+                                        <MenuItem fx:id="miStatusesOfPotentialCustomers" mnemonicParsing="false" onAction="#handleMiStatusOfPotentialCustomersPress" text="Статусы потенциальных клиентов"/>
+                                        <MenuItem fx:id="miPotentialCustomers" mnemonicParsing="false" onAction="#handleMiPotentialCustomersPress" text="Потенциальные клиенты"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnSettlementsWithContractors" mnemonicParsing="false" text="Расчёты с контрагентами">
+                                    <items>
+                                        <MenuItem fx:id="miContractors" mnemonicParsing="false" onAction="#handleMiContractorsPress" text="Контрагенты"/>
+                                        <MenuItem fx:id="miContractorsContracts" mnemonicParsing="false" onAction="#handleMiContractorsContractsPress" text="Договоры"/>
+                                    </items>
+                                </Menu>
+                            </items>
+                        </Menu>
+                        <Menu fx:id="mnDocuments" mnemonicParsing="false" text="Документы">
+                            <items>
+                                <MenuItem fx:id="miConsumableInvoices" mnemonicParsing="false" onAction="#handleMiConsumableInvoicesPress" text="Расходные накладные"/>
+                                <MenuItem fx:id="miDeliveryPlanning" mnemonicParsing="false" onAction="#handleMiDeliveryPlanningPress" text="Планирование доставки"/>
+                                <MenuItem fx:id="miDeliveryLists" mnemonicParsing="false" onAction="#handleMiDeliveryListsPress" text="Ведомости доставки"/>
+                                <MenuItem fx:id="miInvoices" mnemonicParsing="false" onAction="#handleMiInvoicesPress" text="Счета"/>
+                                <MenuItem fx:id="miChecksOfCashRegisterReceipts" mnemonicParsing="false" onAction="#handleMiChecksOfCashRegisterReceiptsPress" text="Чеки ККМ (товарные чеки)"/>
+                                <Menu fx:id="mnCash" mnemonicParsing="false" text="Касса">
+                                    <items>
+                                        <MenuItem fx:id="miReceiptCashOrders" mnemonicParsing="false" onAction="#handleMiReceiptCashOrdersPress" text="Приходные кассовые ордера"/>
+                                        <MenuItem fx:id="miExpenditureCashOrders" mnemonicParsing="false" onAction="#handleMiExpenditureCashOrdersPress" text="Расходные кассовые ордера"/>
+                                        <MenuItem fx:id="miBankCardPayments" mnemonicParsing="false" onAction="#handleMiBankCardPaymentsPress" text="Платежи банковскими картами"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnWarehouse" mnemonicParsing="false" text="Склад">
+                                    <items>
+                                        <MenuItem fx:id="miLoadingIntoCars" mnemonicParsing="false" onAction="#handleMiloadingIntoCarsPress" text="Погрузка в автомобили"/>
+                                        <MenuItem fx:id="miUnloadingFromCars" mnemonicParsing="false" onAction="#handleMiUnloadingFromCarsPress" text="Выгрузка из автомобилей"/>
+                                        <MenuItem fx:id="miMovingGoodsOfGoods" mnemonicParsing="false" onAction="#handleMiMovingGoodsOfGoodsPress" text="Перемещение товаров продукции"/>
+                                        <MenuItem fx:id="miMovingGoodsFromCars" mnemonicParsing="false" onAction="#handleMiMovingGoodsFromCarsPress" text="Перемещение товаров из автомобилей"/>
+                                        <MenuItem fx:id="miMovingGoodsIntoCars" mnemonicParsing="false" onAction="#handleMiMovingGoodsIntoCarsPress" text="Перемещение товаров в автомобили"/>
+                                        <MenuItem fx:id="miMovingEmptyContainers" mnemonicParsing="false" onAction="#handleMiMovingEmptyContainersPress" text="Перемещение пустой тары"/>
+                                        <MenuItem fx:id="miMovingEmptyContainersToCars" mnemonicParsing="false" onAction="#handleMiMovingEmptyContainersToCarsPress" text="Перемещение пустой тары в автомобили"/>
+                                        <MenuItem fx:id="miMovingMaterials" mnemonicParsing="false" onAction="#handleMiMovingMaterialsPress" text="Перемещения материалов"/>
+                                        <MenuItem fx:id="miWritingOffGoods" mnemonicParsing="false" onAction="#handleMiWritingOffGoodsPress" text="Списание товаров продукции"/>
+                                        <MenuItem fx:id="miWritingOffMaterials" mnemonicParsing="false" onAction="#handleMiWritingOffMaterialsPress" text="Списание материалов"/>
+                                        <MenuItem fx:id="miWritingOffDamagedContainers" mnemonicParsing="false" onAction="#handleMiWritingOffDamagedContainersPress" text="Списание испорченной тары"/>
+                                        <MenuItem fx:id="miSellingMaterialsToTheSide" mnemonicParsing="false" onAction="#handleMiSellingMaterialsToTheSidePress" text="Отпуск материалов на сторону"/>
+                                        <MenuItem fx:id="miCapitalizationOfSurplusGoods" mnemonicParsing="false" onAction="#handleMiCapitalizationOfSurplusGoodsPress" text="Оприходования излишков товара"/>
+                                        <MenuItem fx:id="miCapitalizationOfEmptyPackaging" mnemonicParsing="false" onAction="#handleMiCapitalizationOfEmptyPackagingPress" text="Оприходование пустой тары"/>
+                                        <MenuItem fx:id="miAccountingOfReceipts" mnemonicParsing="false" onAction="#handleMiAccountingOfReceiptsPress" text="Учет поступлений"/>
+                                        <MenuItem fx:id="miAccountingOfShipments" mnemonicParsing="false" onAction="#handleMiAccountingOfShipmentsPress" text="Учет отгрузок"/>
+                                        <MenuItem fx:id="miAccountingOfGoodsArrivalAccordingToTheRegisterOfTheStorekeeper" mnemonicParsing="false" onAction="#handleMiAccountingOfGoodsArrivalAccordingToTheRegisterOfTheStorekeeperPress" text="Учет прихода товара по регистру кладовщика"/>
+                                        <MenuItem fx:id="miAccountingOfWriteOffsOfContainerAccordingToTheRegisterOfTheStorekeeper" mnemonicParsing="false" onAction="#handleMiAccountingOfWriteOffsOfContainerAccordingToTheRegisterOfTheStorekeeperPress" text="Учет списаний тары по регистру кладовщика"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnActsReconciliationsDebts" mnemonicParsing="false" text="Акты, сверки, долги">
+                                    <items>
+                                        <MenuItem fx:id="miContactsWithDebtors" mnemonicParsing="false" onAction="#handleMiContactsWithDebtorsPress" text="Контакты с должниками"/>
+                                        <MenuItem fx:id="miActsOfReconciliationOfSettlementsWithBuyers" mnemonicParsing="false" onAction="#handleMiActsOfReconciliationOfSettlementsWithBuyersPress" text="Акты сверки взаиморасчетов с покупателями"/>
+                                        <MenuItem fx:id="miActsOfReconciliationWithSuppliers" mnemonicParsing="false" onAction="#handleMiActsOfReconciliationWithSuppliersPress" text="Акты сверки с поставщиками"/>
+                                        <MenuItem fx:id="miAdjustmentOfSettlements" mnemonicParsing="false" onAction="#handleMiAdjustmentOfSettlementsPress" text="Корректировки взаиморасчетов"/>
+                                        <MenuItem fx:id="miAssignmentOfDebtToYourCompany" mnemonicParsing="false" onAction="#handleMiAssignmentOfDebtToYourCompanyPress" text="Переуступка долга своей фирме"/>
+                                        <MenuItem fx:id="miWritingOffDebts" mnemonicParsing="false" onAction="#handleMiWritingOffDebtsPress" text="Списания долгов"/>
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Маркетинг">
+                                    <items>
+                                        <MenuItem fx:id="miContactsWithInactiveCustomers" mnemonicParsing="false" onAction="#handleMiContactsWithInactiveCustomersPress" text="Контакты с должниками"/>
+                                        <MenuItem fx:id="miInformationFromCustomers" mnemonicParsing="false" onAction="#handleMiInformationFromCustomersPress" text="Акты сверки взаиморасчетов с покупателями"/>
+                                        <MenuItem fx:id="miSMSCustomers" mnemonicParsing="false" onAction="#handleMiSMSCustomersPress" text="Акты сверки с поставщиками"/>
+                                        <MenuItem fx:id="miPricing" mnemonicParsing="false" onAction="#handleMiPricingPress" text="Корректировки взаиморасчетов"/>
+                                        <MenuItem fx:id="miInformationOnPotentialCustomers" mnemonicParsing="false" onAction="#handleMiInformationOnPotentialCustomersPress" text="Переуступка долга своей фирме"/>
+                                        <MenuItem fx:id="miPrepaidGoods" mnemonicParsing="false" onAction="#handleMiPrepaidGoodsPress" text="Списания долгов"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnPurchases" mnemonicParsing="false" text="Закупки">
+                                    <items>
+                                        <MenuItem fx:id="miTheFlowOfGoods" mnemonicParsing="false" onAction="#handleMiTheFlowOfGoodsPress" text="Поступление товаров"/>
+                                        <MenuItem fx:id="miTheFlowOfPackaging" mnemonicParsing="false" onAction="#handleMiTheFlowOfPackagingPress" text="Поступление тары"/>
+                                        <MenuItem fx:id="miTheFlowOfMaterials" mnemonicParsing="false" onAction="#handleMiTheFlowOfMaterialsPress" text="Поступление материалов"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnBank" mnemonicParsing="false" text="Банк">
+                                    <items>
+                                        <MenuItem fx:id="miPaymentOrdersIncoming" mnemonicParsing="false" onAction="#handleMiPaymentOrdersIncomingPress" text="Платежные поручения входящие"/>
+                                        <MenuItem fx:id="miPaymentOrdersOutgoing" mnemonicParsing="false" onAction="#handleMiPaymentOrdersOutgoingPress" text="Платежные поручения исходящие"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnOther" mnemonicParsing="false" text="Прочие">
+                                    <items>
+                                        <MenuItem fx:id="miAccrualOfDepreciationOfTheAsset" mnemonicParsing="false" onAction="#handleMiAccrualOfDepreciationOfTheAssetPress" text="Начисление амортизации ОС"/>
+                                        <MenuItem fx:id="miPowersOfAttorney" mnemonicParsing="false" onAction="#handleMiPowersOfAttorneyPress" text="Доверенности"/>
+                                        <MenuItem fx:id="miSalesWithinTheCompany" mnemonicParsing="false" onAction="#handleMiSalesWithinTheCompanyPress" text="Продажи внутри компании"/>
+                                        <MenuItem fx:id="miTheRepaymentOfDebtWithinTheCompany" mnemonicParsing="false" onAction="#handleMiTheRepaymentOfDebtWithinTheCompanyPress" text="Погашение долга внутри компании"/>
+                                        <MenuItem fx:id="miAdjustmentsOfResiduesOfPackagingFromCustomers" mnemonicParsing="false" onAction="#handleMiAdjustmentsOfResiduesOfPackagingFromCustomersPress" text="Корректировки остатков тары у клиентов"/>
+                                        <MenuItem fx:id="miProfitCalculations" mnemonicParsing="false" onAction="#handleMiProfitCalculationsPress" text="Расчёты прибыли"/>
+                                        <MenuItem fx:id="miStop" mnemonicParsing="false" onAction="#handleMiStopPress" text="Остановки поставок"/>
+                                        <MenuItem fx:id="miSupply" mnemonicParsing="false" onAction="#handleMiSupplyPress" text="Возобновления поставок"/>
+                                    </items>
+                                </Menu>
+                                <Menu fx:id="mnPaymentsToEmployees" mnemonicParsing="false" text="Расчеты с сотрудниками">
+                                    <items>
+                                        <MenuItem fx:id="miCalculationOfAdditionalPaymentsToEmployees" mnemonicParsing="false" onAction="#handleMiCalculationOfAdditionalPaymentsToEmployeesPress" text="Расчёт доплат сотрудникам"/>
+                                        <MenuItem fx:id="miCalculationsForIndividualDriversOrFreightForwarders" mnemonicParsing="false" onAction="#handleMiCalculationsForIndividualDriversOrFreightForwardersPress" text="Расчёты отдельным водителям, экспедиторам"/>
+                                        <MenuItem fx:id="miAdditionalPaymentsForNewCustomers" mnemonicParsing="false" onAction="#handleMiAdditionalPaymentsForNewCustomersPress" text="Доплаты за новых клиентов"/>
+                                        <MenuItem fx:id="miCalculationOfDeductionsFromEmployees" mnemonicParsing="false" onAction="#handleMiCalculationOfDeductionsFromEmployeesPress" text="Расчет удержаний с сотрудников"/>
+                                        <MenuItem fx:id="miAdvanceReports" mnemonicParsing="false" onAction="#handleMiAdvanceReportsPress" text="Авансовые отчеты"/>
+                                    </items>
+                                </Menu>
+                            </items>
+                        </Menu>
+                        <Menu fx:id="mnAdministration" mnemonicParsing="false" text="Администрирование">
+                            <MenuItem fx:id="miUsers" mnemonicParsing="false" onAction="#handleMiUsersPress" text="Пользователи"/>
+                            <MenuItem fx:id="miSettingsAndRights" mnemonicParsing="false" onAction="#handleMiSettingsAndRightsPress" text="Права и настройки"/>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </top>
+            <center/>
+            <center>
+                <TabPane fx:id="tpContentPane" side="BOTTOM" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER"/>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?><?import javafx.scene.control.*?><?import javafx.scene.control.cell.*?><?import javafx.scene.image.*?><?import javafx.scene.layout.*?><?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="merman.references.settlementswithemployees.TypesOfChargesController">
+    <stylesheets>
+        <URL value="@../../styles.css"/>
+    </stylesheets>
+    <SplitPane dividerPositions="0.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+        <AnchorPane>
+            <TableView fx:id="tvTypesOfCharges" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <columns>
+                    <TableColumn fx:id="tcName" prefWidth="100.0" text="Наименование">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcCategoryOfDelivery" prefWidth="100.0" text="Категория доставки">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="categoryOfDelivery"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcCategoryOfProducts" prefWidth="100.0" text="Категория товаров">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="productCategory"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcCategoryOfServices" prefWidth="100.0" text="Категория услуг">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="serviceCategory"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcService" prefWidth="150.0" text="Услуга">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="service"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </AnchorPane>
+        <BorderPane SplitPane.resizableWithParent="false">
+            <center>
+                <TabPane minWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <Tab text="Основные">
+                        <AnchorPane>
+                            <GridPane fx:id="gpBasic" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Код:"/>
+                                <TextField fx:id="tfName" promptText="Наименование:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <ComboBox fx:id="cbPosition" maxWidth="1.7976931348623157E308" promptText="Должность:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <ComboBox fx:id="cbOptionOfTheBaseOfCharges" maxWidth="1.7976931348623157E308" promptText="Вариант базы начислений:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <DatePicker fx:id="dpSurchargeIsValidFrom" promptText="Доплата действует c:" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                <DatePicker fx:id="dpSurchargeIsValidUntil" promptText="Доплата действует до:" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                                <Label fx:id="lbId" GridPane.columnIndex="1"/>
+                                <Label text="Наименование:" GridPane.rowIndex="1"/>
+                                <Label text="Должность:" GridPane.rowIndex="2"/>
+                                <Label text="Вариант базы начислений:" GridPane.rowIndex="3"/>
+                                <Label text="Доплата действует c:" GridPane.rowIndex="4"/>
+                                <Label text="Доплата действует до:" GridPane.rowIndex="5"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Доставка, продажи, звонки">
+                        <AnchorPane>
+                            <GridPane fx:id="gpDeliverySalesCalls" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Процент от суммы продаж:"/>
+                                <TextField fx:id="tfPercentageOfSalesAmount" promptText="Процент от суммы продаж:" GridPane.columnIndex="1"/>
+                                <Label text="Сумма начисления за единицу:" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tfAmountChargedPerUnit" promptText="Сумма начисления за единицу:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Сумма за 1 кг. доставленного груза:" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tfAmountPer1KilogramOfDeliveredProducts" promptText="Сумма за 1 кг. доставленного груза:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Label text="За один адрес доставки(накладную, звонок):" GridPane.rowIndex="3"/>
+                                <TextField fx:id="tfForOneDeliveryAddress" promptText="За один адрес доставки(накладную, звонок):" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <Label text="За возврат единицы тары:" GridPane.rowIndex="4"/>
+                                <TextField fx:id="tfForReturningAUnitOfPackaging" promptText="За возврат единицы тары:" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                <Label text="За один выезд без товара:" GridPane.rowIndex="5"/>
+                                <TextField fx:id="tfForOneDepartureWithoutProducts" promptText="За один выезд без товара:" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                                <Label text="За выезд на маршрут:" GridPane.rowIndex="6"/>
+                                <TextField fx:id="tfForDepartureOnTheRoute" promptText="За выезд на маршрут:" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                                <Label text="За одну возвращенную накладную:" GridPane.rowIndex="7"/>
+                                <TextField fx:id="tfForOneReturnedInvoice" promptText="За одну возвращенную накладную:" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                                <Label text="За прием наличных(1 накладная):" GridPane.rowIndex="8"/>
+                                <TextField fx:id="tfForCashReception" promptText="За прием наличных(1 накладная):" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Фильтры начисления">
+                        <AnchorPane>
+                            <GridPane fx:id="gpChargeFilters" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Смена доставки:"/>
+                                <ComboBox fx:id="cbChangeOfDelivery" maxWidth="1.7976931348623157E308" promptText="Смена доставки:" GridPane.columnIndex="1"/>
+                                <Label text="Категория доставки:" GridPane.rowIndex="1"/>
+                                <ComboBox fx:id="cbCategoryOfDelivery" maxWidth="1.7976931348623157E308" promptText="Категория доставки:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Категория товаров:" GridPane.rowIndex="2"/>
+                                <ComboBox fx:id="cbProductCategory" maxWidth="1.7976931348623157E308" promptText="Категория товаров:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Label text="Начиная с количества товаров:" GridPane.rowIndex="3"/>
+                                <TextField fx:id="tfStartingFromTheNumberOfProducts" promptText="Начиная с количества товаров:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <Label text="До количества товаров:" GridPane.rowIndex="4"/>
+                                <TextField fx:id="tfToTheNumberOfProducts" promptText="До количества товаров:" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                                <CheckBox fx:id="chbOnlyOnActiveSales" text="Только по активным продажам" GridPane.columnSpan="2" GridPane.rowIndex="5"/>
+                                <CheckBox fx:id="chbOnlyUponReceiptOfMoneyOrReturnOfDocuments" text="Только при получении денег или возврате документов(за единицу товара):" GridPane.columnSpan="2" GridPane.rowIndex="6"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Услуги">
+                        <AnchorPane>
+                            <GridPane fx:id="gpServices" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Категории услуг:"/>
+                                <ComboBox fx:id="cbServiceCategory" maxWidth="1.7976931348623157E308" promptText="Категории услуг:" GridPane.columnIndex="1"/>
+                                <Label text="Услуга:" GridPane.rowIndex="1"/>
+                                <ComboBox fx:id="cbService" maxWidth="1.7976931348623157E308" promptText="Услуга:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="За единицу оказанных услуг:" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tfPerUnitOfServiceProvided" promptText="За единицу оказанных услуг:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Погашение долгов">
+                        <AnchorPane>
+                            <GridPane fx:id="gpDebtRepayment" disable="true" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                                    <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="NEVER"/>
+                                </rowConstraints>
+                                <padding>
+                                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                                </padding>
+                                <Label text="Категории потребления:"/>
+                                <ComboBox fx:id="cbConsumptionCategories" maxWidth="1.7976931348623157E308" promptText="Категории потребления:" GridPane.columnIndex="1"/>
+                                <Label text="Процент от суммы погашения:" GridPane.rowIndex="1"/>
+                                <TextField fx:id="tfPercentageOfRepaymentAmount" promptText="Процент от суммы погашения:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Дней просрочки от:" GridPane.rowIndex="2"/>
+                                <TextField fx:id="tfDaysOverdueFrom" promptText="Дней просрочки от:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Label text="Дней просрочки до:" GridPane.rowIndex="3"/>
+                                <TextField fx:id="tfDaysOverdueUntil" promptText="Дней просрочки до:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                            </GridPane>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </center>
+            <bottom>
+                <ButtonBar fx:id="bbSaveCancel" disable="true" minHeight="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                    </padding>
+                    <buttons>
+                        <Button onAction="#handleBtnCancelPress" text="Отмена"/>
+                        <Button layoutX="88.0" layoutY="10.0" onAction="#handleBtnSavePress" text="Сохранить"/>
+                    </buttons>
+                </ButtonBar>
+            </bottom>
+        </BorderPane>
+    </SplitPane>
+    <ToolBar maxHeight="-Infinity" minHeight="-Infinity" prefHeight="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <HBox alignment="CENTER_LEFT" spacing="8.0" BorderPane.alignment="CENTER">
+            <Button fx:id="btnAddTypeOfCharges" contentDisplay="GRAPHIC_ONLY" onAction="#handleBtnAddTypeOfChargesPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/add-row.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnUpdateTypeOfCharges" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" onAction="#handleBtnUpdateTypeOfChargesPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/edit-row.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnRemoveTypeOfCharges" contentDisplay="GRAPHIC_ONLY" layoutX="231.0" layoutY="10.0" onAction="#handleBtnRemoveTypeOfChargesPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/delete-row.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnSearchTypeOfCharges" contentDisplay="GRAPHIC_ONLY" layoutX="279.0" layoutY="10.0" onAction="#handleBtnSearchTypeOfChargesPress" styleClass="toolbar-button">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../../icons/search.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+
+        </HBox>
+    </ToolBar>
+</AnchorPane>

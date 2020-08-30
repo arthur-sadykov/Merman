@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?><?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="300" prefWidth="500" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="merman.documents.consumableinvoices.ConsumableInvoicesProductsController">
+    <stylesheets>
+        <URL value="@../../styles.css"/>
+    </stylesheets>
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <center>
+            <AnchorPane>
+                <GridPane fx:id="gpBasic" hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="200.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                        <RowConstraints/>
+                    </rowConstraints>
+                    <padding>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                    </padding>
+                    <Label text="Товар:"/>
+                    <ComboBox fx:id="cbProduct" maxWidth="1.7976931348623157E308" promptText="Товар:" GridPane.columnIndex="1"/>
+                    <Label text="Количество:" GridPane.rowIndex="1"/>
+                    <TextField fx:id="tfQuantity" promptText="Количество:" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Label text="Цена:" GridPane.rowIndex="2"/>
+                    <TextField fx:id="tfPrice" promptText="Цена:" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <Label text="Сумма:" GridPane.rowIndex="3"/>
+                    <TextField fx:id="tfAmount" editable="false" promptText="Сумма:" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                    <Label text="Ставка НДС:" GridPane.rowIndex="4"/>
+                    <ComboBox fx:id="cbVatRate" maxWidth="1.7976931348623157E308" promptText="Ставка НДС:" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                    <Label text="В т.ч. НДС:" GridPane.rowIndex="5"/>
+                    <TextField fx:id="tfVatAmount" editable="false" promptText="В т.ч. НДС:" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                    <Label text="Тара:" GridPane.rowIndex="6"/>
+                    <ComboBox fx:id="cbFlipContainer" maxWidth="1.7976931348623157E308" promptText="Тара:" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                    <Label text="Остатки товара:" GridPane.rowIndex="7"/>
+                    <TextField fx:id="tfProductRemainder" promptText="Остатки товара:" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                </GridPane>
+            </AnchorPane>
+        </center>
+        <bottom>
+            <ButtonBar fx:id="bbSaveCancel" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+                <padding>
+                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+                </padding>
+                <buttons>
+                    <Button fx:id="btnSave" layoutX="88.0" layoutY="10.0" onAction="#handleBtnSavePress" text="Сохранить"/>
+                    <Button fx:id="btnCancel" onAction="#handleBtnCancelPress" text="Отмена"/>
+                </buttons>
+            </ButtonBar>
+        </bottom>
+    </BorderPane>
+</AnchorPane>

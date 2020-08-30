@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?><?import javafx.scene.control.*?><?import javafx.scene.layout.*?><?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" onKeyPressed="#handleEnterKeyPress" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="merman.login.LoginController">
+    <GridPane hgap="8.0" vgap="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="400.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="48.0" valignment="TOP" vgrow="NEVER"/>
+            <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="NEVER"/>
+            <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="NEVER"/>
+            <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="NEVER"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <padding>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+        </padding>
+        <ComboBox fx:id="cbDatabase" editable="true" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <TextField fx:id="tfUserName" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <PasswordField fx:id="pfPassword" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Button fx:id="btnEnterSystem" alignment="CENTER" disable="true" onAction="#handleBtnEnterSystemPress" styleClass="enter-system-button" text="ВОЙТИ" GridPane.rowIndex="4"/>
+        <Label text="Информационная база:" GridPane.rowIndex="1"/>
+        <Label layoutX="10.0" layoutY="61.0" text="Пароль:" GridPane.rowIndex="3"/>
+        <Label layoutX="10.0" layoutY="22.0" text="Пользователь:" GridPane.rowIndex="2"/>
+        <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <ProgressIndicator fx:id="piProgress" visible="false"/>
+            <Label fx:id="lbProgress" visible="false"/>
+        </HBox>
+        <Label text="Авторизация доступа" GridPane.columnSpan="2147483647">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+    </GridPane>
+</AnchorPane>

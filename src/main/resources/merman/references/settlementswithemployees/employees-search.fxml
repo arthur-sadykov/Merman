@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?><?import javafx.scene.control.cell.PropertyValueFactory?><?import javafx.scene.layout.*?><?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="merman.references.settlementswithemployees.EmployeesSearchController">
+    <stylesheets>
+        <URL value="@../../styles.css"/>
+    </stylesheets>
+    <SplitPane dividerPositions="0.3" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+        <AnchorPane>
+            <ListView fx:id="lvOptions" minWidth="200" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="96.0"/>
+            <Label text="Поиск" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="8.0"/>
+            <TextField fx:id="tfSearch" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="48.0"/>
+            <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#handleBtnSearchPress" text="Выполнить" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" styleClass="toolbar-button"/>
+        </AnchorPane>
+        <AnchorPane>
+            <TableView fx:id="tvEmployees" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0">
+                <columns>
+                    <TableColumn fx:id="tcSurname" prefWidth="100.0" text="Фамилия">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="surname"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcName" prefWidth="100.0" text="Имя">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcPatronymic" prefWidth="100.0" text="Отчество">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="patronymic"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="tcPosition" prefWidth="100.0" text="Должность">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="position"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </AnchorPane>
+    </SplitPane>
+</AnchorPane>
